@@ -11,6 +11,7 @@ def dashboard(request):
     total_orders = orders.count()
     pending = orders.filter(status='Pending').count()
     delivered = orders.filter(status='Delivered').count()
+    # return HttpResponse(delivered)
     context = {
         'orders': orders, 
         'customers':customers,
@@ -26,5 +27,13 @@ def products(request):
     context = {'products' : products}
     return render(request, 'accounts/products.html', context)
 
-def customer(request):
-    return render(request, 'accounts/customer.html')
+def customer(request, id):
+    customer = Customer.objects.get(id=id)
+    orders = customer.order_set.all()
+    order_count = orders.count()
+    context = {
+        'customer': customer,
+        'orders': orders,
+        'order_count':order_count
+    }
+    return render(request, 'accounts/customer.html', context)
