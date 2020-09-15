@@ -7,6 +7,7 @@ urlpatterns = [
 
     path('', views.dashboard, name='dashboard'),
     path('user/', views.userPage, name='user-page'),
+    path('account/', views.accountSettings, name='account'),
     path('products/', views.products, name='products'),
     path('customer/<str:id>/', views.customer, name='customer'),
 

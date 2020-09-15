@@ -14,3 +14,10 @@ body{
 #total-pending{
     background-color: #7CD1C0;
 }
+
+.profile-pic{
+    max-width: 200px;
+    max-height:200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
