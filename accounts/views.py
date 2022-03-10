@@ -9,7 +9,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 
-
 # Create your views here.
 from .models import *
 from .forms import OrderForm, CreateUserForm, CustomerForm
@@ -19,16 +18,14 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 
 @unauthenticated_user
 def registerPage(request):
-
     form = CreateUserForm()
 
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            
             user = form.save()
 
-            group =Group.objects.get(name='customer')
+            group = Group.objects.get(name='customer')
             user.groups.add(group)
             Customer.objects.create(user=user)
 
@@ -36,7 +33,7 @@ def registerPage(request):
 
             return redirect('login')
 
-    context= {'form':form}
+    context = {'form': form}
     return render(request, 'accounts/register.html', context)
 
 
@@ -55,7 +52,7 @@ def loginPage(request):
             messages.info(request, 'username or password is incorrct')
             # return render(request, 'accounts/login.html')
 
-    context= {}
+    context = {}
     return render(request, 'accounts/login.html')
 
 
@@ -63,6 +60,7 @@ def loginPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
 
 @login_required(login_url='login')
 @admin_only
@@ -75,13 +73,13 @@ def dashboard(request):
     delivered = orders.filter(status='Delivered').count()
     # return HttpResponse(delivered)
     context = {
-        'orders': orders, 
-        'customers':customers,
-        'total_orders':total_orders,
-        'total_customers':total_customers,
-        'delivered':delivered,
-        'pending':pending
-        }
+        'orders': orders,
+        'customers': customers,
+        'total_orders': total_orders,
+        'total_customers': total_customers,
+        'delivered': delivered,
+        'pending': pending
+    }
     return render(request, 'accounts/dashboard.html', context)
 
 
@@ -93,11 +91,11 @@ def userPage(request):
     pending = orders.filter(status='Pending').count()
     delivered = orders.filter(status='Delivered').count()
     context = {
-        'orders':orders,
-        'total_orders':total_orders,
-        'delivered':delivered,
-        'pending':pending
-        }
+        'orders': orders,
+        'total_orders': total_orders,
+        'delivered': delivered,
+        'pending': pending
+    }
     return render(request, 'accounts/user.html', context)
 
 
@@ -112,14 +110,15 @@ def accountSettings(request):
         if form.is_valid():
             form.save()
 
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'accounts/account_settings.html', context)
+
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
 def products(request):
     products = Product.objects.all()
-    context = {'products' : products}
+    context = {'products': products}
     return render(request, 'accounts/products.html', context)
 
 
@@ -136,7 +135,7 @@ def customer(request, id):
     context = {
         'customer': customer,
         'orders': orders,
-        'order_count':order_count,
+        'order_count': order_count,
         'myFilter': myFilter
     }
     return render(request, 'accounts/customer.html', context)
@@ -147,7 +146,7 @@ def customer(request, id):
 def createOrder(request, customer_id):
     OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=10)
     customer = Customer.objects.get(id=customer_id)
-    formset = OrderFormSet(queryset=Order.objects.none(),instance=customer)
+    formset = OrderFormSet(queryset=Order.objects.none(), instance=customer)
     # form = OrderForm(initial={'customer': customer})
 
     if request.method == 'POST':
@@ -172,7 +171,7 @@ def updateOrder(request, id):
             form.save()
             return redirect('/')
 
-    context = {'order':order, 'form': form}
+    context = {'order': order, 'form': form}
     return render(request, 'accounts/order_form.html', context)
 
 
@@ -183,6 +182,6 @@ def deleteOrder(request, id):
     if request.method == 'POST':
         order.delete()
         return redirect('/')
-        
-    context = {'order':order}
+
+    context = {'order': order}
     return render(request, 'accounts/delete.html', context)
