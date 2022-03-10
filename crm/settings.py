@@ -75,17 +75,9 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'NAME': "d52ddv3dbo460e",
-        'USER': "qqbfqvdobtqeol",
-        'HOST': "ec2-44-192-245-97.compute-1.amazonaws.com",
-        'PORT': "5432",
-        'PASSWORD': "10941db64dc71a163ede23efdfb81af24087cb5afa5506f88c3414e06b340add",
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
