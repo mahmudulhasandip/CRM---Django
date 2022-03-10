@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03381cf2-cb19-4628-827e-08173ba19264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/accounts/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="03381cf2-cb19-4628-827e-08173ba19264" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646909019931</updated>
       <workItem from="1646909021086" duration="90000" />
-      <workItem from="1646909120525" duration="1688000" />
+      <workItem from="1646909120525" duration="2541000" />
     </task>
     <servers />
   </component>
