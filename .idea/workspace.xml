@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03381cf2-cb19-4628-827e-08173ba19264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646909019931</updated>
       <workItem from="1646909021086" duration="90000" />
-      <workItem from="1646909120525" duration="3823000" />
+      <workItem from="1646909120525" duration="4286000" />
     </task>
     <servers />
   </component>
